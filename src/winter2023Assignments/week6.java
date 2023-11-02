@@ -1,4 +1,4 @@
-package week06;
+package winter2023Assignments;
 
 public class week6 {
 public static void menu() { 

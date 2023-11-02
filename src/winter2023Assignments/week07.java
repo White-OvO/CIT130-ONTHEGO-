@@ -1,4 +1,4 @@
-package week06;
+package winter2023Assignments;
 
 import java.util.Scanner;
 
@@ -23,30 +23,15 @@ public class week07 {
 		System.out.println("Enter the amount of students : \n");
 	//giving the number of students entered an array
 		int students = scanner.nextInt(); // read an integer from the user
-		//System.out.println("Number of students entered : = " + students);
-	///	scanner.close();
-		
-		
-//		
-//		while
-//			students < 1 { 
-//			System.out.println("Invalid try again:");
-//		}
-//		else { 
-//			System.out.println("Enter the name & test score for the students: \n");
-//		}
-//		
-//		
-		
-		// processes the number of students
-	if(students < 1) { 
+
+	while(students < 1) { 
 		System.out.println("Invalid try again \n");
 	}
-	if (students == 1){ 
+	else if (students == 1){ 
 		System.out.println("Enter the name of the student followed by test score\n");
 	}
 
-	else { 
+	else if{ 
 		System.out.println("Enter the amount of name of the " + students + " students followed by test score \n");
 	}
 	
@@ -126,7 +111,7 @@ public class week07 {
 
 scanner.close();
 	
-
+	}
 
 
 // A method that calculates and returns the average of the 
@@ -136,26 +121,28 @@ scanner.close();
 
 
 //public void average() {
-public int average(double[] scoresPile) { // scorePiles are the test scores in total 
+public double calculateAverageScore(double[] testScores) { // scorePiles are the test scores in total 
 	// adds a number to to the sumtotal
 	double cardsUltimatelyInDeck = 0;
-	for (int i = 0; i < scoresPile.length; i++ ) { 
+	int numStudents = testScores.length;
+	for (int i = 0; i < testScores.length; i++ ) { 
 
 
 	//sumTotal =+ sumTotal / sumTotal.length;
-		cardsUltimatelyInDeck += scoresPile[i];
+		cardsUltimatelyInDeck += testScores[i];
 	}
 	
 	
 	
-	double average = cardsUltimatelyInDeck / scoresPile.length;   // calculating the average
+	double average = cardsUltimatelyInDeck / testScores.length;   // calculating the average
 
 	// the .length priortie is to count the size of number of element in array its variable is .
-	int count = 0;
-for (int i =0; i < scoresPile.length; i++);
-if (students[i] > average) {
-	count++;
+	
+	//int count = 0;
+
+System.out.println("average is : " +average);
+return average;
 }
-	}
-return count;
+
 }
+
