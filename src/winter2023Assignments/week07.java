@@ -18,11 +18,11 @@ import java.util.Scanner;
 public class week07 {
 
 	public static void main(String[] args) {
-		//Scanner scanner = new Scanner;
+		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter the amount of students : \n");
-	//giving the number of students entered an array
-		int students = scanner.nextInt(); // read an integer from the user
+
+		int students = scanner.nextInt(); 
 
 		
 		
@@ -101,23 +101,26 @@ public class week07 {
 */	
 	
 	for (int i = 0; i < students; i++) { 
-//System.out.println("*** Sorted data ***\n");
+
 		System.out.printf("%s  %.2f\n", studentNames[i], testScores[i]);
 
 	}
-    double averageScore = calculateAverageScore(testScores);
-//scanner.close();
-	System.out.println("average is : " +averageScore);
+  
+	
+	
 
-	
-	
-	double variance = calculateVariance(testScores);
-	System.out.println("Variance is : " + variance);
 
 	sortData(studentNames, testScores);
-	System.out.println("\n*** Here is the sorted data ***");
+	System.out.println("\n*** Sorted data ***");
 	for (int i = 0; i < students; i++) { 
 	    System.out.printf("%s  %.2f\n", studentNames[i], testScores[i]);
+	    double averageScore = calculateAverageScore(testScores);
+
+		System.out.println("average is : " +averageScore);
+
+		
+		double variance = calculateVariance(testScores);
+		System.out.println("Variance is : " + variance);
 	}
 	scanner.close();
 	
@@ -152,7 +155,7 @@ public static double calculateAverageScore(double[] testScores) {
 	
 	
 	
-	double average = sum / testScores.length;   // calculating the average
+	double average = sum / testScores.length; 
 
 	
 	return average;
