@@ -108,15 +108,38 @@ public class week07 {
     double averageScore = calculateAverageScore(testScores);
 //scanner.close();
 	System.out.println("average is : " +averageScore);
-	scanner.close();
-	}
 
-/*
+	
+	
+	double variance = calculateVariance(testScores);
+	System.out.println("Variance is : " + variance);
+
+	sortData(studentNames, testScores);
+	System.out.println("\n*** Here is the sorted data ***");
+	for (int i = 0; i < students; i++) { 
+	    System.out.printf("%s  %.2f\n", studentNames[i], testScores[i]);
+	}
+	scanner.close();
+	
+	
+	}
+	/*
 // A method that calculates and returns the average of the 
 //test scores. The method will need the test score array.
 */
 
 
+	
+	
+	
+	
+	/*
+	 * A method that calculates and returns the average of the 
+	 * test scores. The method will need the test score array.
+	 * 
+	 * 
+	 */
+	
 
 public static double calculateAverageScore(double[] testScores) { 
 
@@ -134,6 +157,78 @@ public static double calculateAverageScore(double[] testScores) {
 	
 	return average;
 	}
+
+
+
+
+/*
+ * A method that calculates and returns the variance of the 
+ * test scores. To calculate the variance, you need the average
+ *  of the numbers, so call your method that returns the average 
+ *  in this method.
+ * 
+ * 
+ */
+
+
+
+
+
+
+
+
+public static double calculateVariance(double[] testScores) { 
+    double sum = 0;
+    double average = calculateAverageScore(testScores);
+
+    for(double score : testScores) { 
+        sum += Math.pow(score - average, 2);
+    }
+
+    return sum / (testScores.length - 1); 
+}
+
+
+
+/*
+ * A method that sorts the data by test score in 
+ * increasing order. You can use any of the sort methods
+ *  mentioned in the textbook or any method you find on 
+ *  the web. You just must make sure to swap the names at 
+ *  the same time you swap the test scores.
+ * 
+ 
+ */
+
+
+public static void swap(double[] array, int i, int j) {
+    double temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+}
+
+public static void swap(String[] array, int i, int j) {
+    String temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+}
+
+public static void sortData(String[] studentNames, double[] testScores) {
+    int n = testScores.length;
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (testScores[j] > testScores[j+1]) {
+           
+                swap(testScores, j, j+1);
+
+                swap(studentNames, j, j+1);
+            }
+        }
+    }
+}
+
+
+
 
 }
 
